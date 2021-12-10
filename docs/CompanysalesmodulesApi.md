@@ -1,0 +1,124 @@
+# TripletexRubyClient::CompanysalesmodulesApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**get**](CompanysalesmodulesApi.md#get) | **GET** /company/salesmodules | [BETA] Get active sales modules.
+[**post**](CompanysalesmodulesApi.md#post) | **POST** /company/salesmodules | [BETA] Add (activate) a new sales module.
+
+
+# **get**
+> ListResponseSalesModuleDTO get(opts)
+
+[BETA] Get active sales modules.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::CompanysalesmodulesApi.new
+
+opts = { 
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get active sales modules.
+  result = api_instance.get(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling CompanysalesmodulesApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseSalesModuleDTO**](ListResponseSalesModuleDTO.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperSalesModuleDTO post(opts)
+
+[BETA] Add (activate) a new sales module.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::CompanysalesmodulesApi.new
+
+opts = { 
+  body: TripletexRubyClient::SalesModuleDTO.new # SalesModuleDTO | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Add (activate) a new sales module.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling CompanysalesmodulesApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SalesModuleDTO**](SalesModuleDTO.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperSalesModuleDTO**](ResponseWrapperSalesModuleDTO.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+

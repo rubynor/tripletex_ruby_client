@@ -1,0 +1,259 @@
+# TripletexRubyClient::BankstatementApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](BankstatementApi.md#delete) | **DELETE** /bank/statement/{id} | [BETA] Delete bank statement by ID.
+[**get**](BankstatementApi.md#get) | **GET** /bank/statement/{id} | [BETA] Get bank statement.
+[**import_bank_statement**](BankstatementApi.md#import_bank_statement) | **POST** /bank/statement/import | [BETA] Upload bank statement file.
+[**search**](BankstatementApi.md#search) | **GET** /bank/statement | [BETA] Find bank statement corresponding with sent data.
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete bank statement by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::BankstatementApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete bank statement by ID.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling BankstatementApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperBankStatement get(id, opts)
+
+[BETA] Get bank statement.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::BankstatementApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get bank statement.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling BankstatementApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperBankStatement**](ResponseWrapperBankStatement.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **import_bank_statement**
+> ResponseWrapperBankStatement import_bank_statement(bank_id, account_id, from_date, to_date, file_format, file, opts)
+
+[BETA] Upload bank statement file.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::BankstatementApi.new
+
+bank_id = 56 # Integer | Bank ID
+
+account_id = 56 # Integer | Account ID
+
+from_date = 'from_date_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+to_date = 'to_date_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+file_format = 'file_format_example' # String | File format
+
+file = File.new('/path/to/file.txt') # File | The bank statement file
+
+opts = { 
+  external_id: 'external_id_example' # String | External ID
+}
+
+begin
+  #[BETA] Upload bank statement file.
+  result = api_instance.import_bank_statement(bank_id, account_id, from_date, to_date, file_format, file, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling BankstatementApi->import_bank_statement: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **bank_id** | **Integer**| Bank ID | 
+ **account_id** | **Integer**| Account ID | 
+ **from_date** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **to_date** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **file_format** | **String**| File format | 
+ **file** | **File**| The bank statement file | 
+ **external_id** | **String**| External ID | [optional] 
+
+### Return type
+
+[**ResponseWrapperBankStatement**](ResponseWrapperBankStatement.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseBankStatement search(opts)
+
+[BETA] Find bank statement corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::BankstatementApi.new
+
+opts = { 
+  id: 'id_example', # String | List of IDs
+  account_id: 'account_id_example', # String | List of IDs
+  file_format: 'file_format_example', # String | File format
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find bank statement corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling BankstatementApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| List of IDs | [optional] 
+ **account_id** | **String**| List of IDs | [optional] 
+ **file_format** | **String**| File format | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseBankStatement**](ListResponseBankStatement.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

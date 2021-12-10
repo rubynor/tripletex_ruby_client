@@ -1,0 +1,462 @@
+# TripletexRubyClient::InventorylocationApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](InventorylocationApi.md#delete) | **DELETE** /inventory/location/{id} | [BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**delete_by_ids**](InventorylocationApi.md#delete_by_ids) | **DELETE** /inventory/location/list | [BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**get**](InventorylocationApi.md#get) | **GET** /inventory/location/{id} | Get inventory location by ID. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**post**](InventorylocationApi.md#post) | **POST** /inventory/location | [BETA] Create new inventory location. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**post_list**](InventorylocationApi.md#post_list) | **POST** /inventory/location/list | [BETA] Add multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**put**](InventorylocationApi.md#put) | **PUT** /inventory/location/{id} | [BETA] Update inventory location. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**put_list**](InventorylocationApi.md#put_list) | **PUT** /inventory/location/list | [BETA] Update multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**search**](InventorylocationApi.md#search) | **GET** /inventory/location | [BETA] Find inventory locations by inventory ID. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **delete_by_ids**
+> delete_by_ids(ids)
+
+[BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+ids = 'ids_example' # String | ID of the elements
+
+
+begin
+  #[BETA] Delete inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  api_instance.delete_by_ids(ids)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->delete_by_ids: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **String**| ID of the elements | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperInventoryLocation get(id, opts)
+
+Get inventory location by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Get inventory location by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperInventoryLocation**](ResponseWrapperInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperInventoryLocation post(opts)
+
+[BETA] Create new inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+opts = { 
+  body: TripletexRubyClient::InventoryLocation.new # InventoryLocation | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create new inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**InventoryLocation**](InventoryLocation.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperInventoryLocation**](ResponseWrapperInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponseInventoryLocation post_list(opts)
+
+[BETA] Add multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+opts = { 
+  body: [TripletexRubyClient::InventoryLocation.new] # Array<InventoryLocation> | JSON representing a list of new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Add multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;InventoryLocation&gt;**](InventoryLocation.md)| JSON representing a list of new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseInventoryLocation**](ListResponseInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperInventoryLocation put(id, opts)
+
+[BETA] Update inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::InventoryLocation.new # InventoryLocation | Partial object describing what should be updated
+}
+
+begin
+  #[BETA] Update inventory location. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**InventoryLocation**](InventoryLocation.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperInventoryLocation**](ResponseWrapperInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put_list**
+> ListResponseInventoryLocation put_list(opts)
+
+[BETA] Update multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+opts = { 
+  body: [TripletexRubyClient::InventoryLocation.new] # Array<InventoryLocation> | JSON representing updates to object. Should have ID and version set.
+}
+
+begin
+  #[BETA] Update multiple inventory locations. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.put_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->put_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;InventoryLocation&gt;**](InventoryLocation.md)| JSON representing updates to object. Should have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseInventoryLocation**](ListResponseInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseInventoryLocation search(opts)
+
+[BETA] Find inventory locations by inventory ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::InventorylocationApi.new
+
+opts = { 
+  warehouse_id: 'warehouse_id_example', # String | List of IDs
+  is_inactive: true, # BOOLEAN | Equals
+  name: 'name_example', # String | Containing
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find inventory locations by inventory ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling InventorylocationApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **warehouse_id** | **String**| List of IDs | [optional] 
+ **is_inactive** | **BOOLEAN**| Equals | [optional] 
+ **name** | **String**| Containing | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseInventoryLocation**](ListResponseInventoryLocation.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

@@ -1,0 +1,474 @@
+# TripletexRubyClient::ProductunitApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](ProductunitApi.md#delete) | **DELETE** /product/unit/{id} | [BETA] Delete product unit by ID.
+[**get**](ProductunitApi.md#get) | **GET** /product/unit/{id} | Get product unit by ID.
+[**post**](ProductunitApi.md#post) | **POST** /product/unit | [BETA] Create new product unit.
+[**post_list**](ProductunitApi.md#post_list) | **POST** /product/unit/list | [BETA] Create multiple product units.
+[**put**](ProductunitApi.md#put) | **PUT** /product/unit/{id} | [BETA] Update product unit.
+[**put_list**](ProductunitApi.md#put_list) | **PUT** /product/unit/list | [BETA] Update list of product units.
+[**query**](ProductunitApi.md#query) | **GET** /product/unit/query | [BETA] Wildcard search.
+[**search**](ProductunitApi.md#search) | **GET** /product/unit | Find product units corresponding with sent data.
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete product unit by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete product unit by ID.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperProductUnit get(id, opts)
+
+Get product unit by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Get product unit by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProductUnit**](ResponseWrapperProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperProductUnit post(opts)
+
+[BETA] Create new product unit.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+opts = { 
+  body: TripletexRubyClient::ProductUnit.new # ProductUnit | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create new product unit.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductUnit**](ProductUnit.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperProductUnit**](ResponseWrapperProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponseProductUnit post_list(opts)
+
+[BETA] Create multiple product units.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+opts = { 
+  body: [TripletexRubyClient::ProductUnit.new] # Array<ProductUnit> | JSON representing a list of new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create multiple product units.
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;ProductUnit&gt;**](ProductUnit.md)| JSON representing a list of new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseProductUnit**](ListResponseProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperProductUnit put(id, opts)
+
+[BETA] Update product unit.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::ProductUnit.new # ProductUnit | Partial object describing what should be updated
+}
+
+begin
+  #[BETA] Update product unit.
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**ProductUnit**](ProductUnit.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperProductUnit**](ResponseWrapperProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put_list**
+> ListResponseProductUnit put_list(opts)
+
+[BETA] Update list of product units.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+opts = { 
+  body: [TripletexRubyClient::ProductUnit.new] # Array<ProductUnit> | JSON representing updates to object. Should have ID and version set.
+}
+
+begin
+  #[BETA] Update list of product units.
+  result = api_instance.put_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->put_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;ProductUnit&gt;**](ProductUnit.md)| JSON representing updates to object. Should have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseProductUnit**](ListResponseProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **query**
+> ListResponseProductUnit query(opts)
+
+[BETA] Wildcard search.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+opts = { 
+  query: 'query_example', # String | Containing
+  count: 25, # Integer | Number of elements to return
+  fields: 'id, name', # String | Fields filter pattern
+  from: 0, # Integer | From index
+  sorting: 'sorting_example' # String | Sorting pattern
+}
+
+begin
+  #[BETA] Wildcard search.
+  result = api_instance.query(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->query: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **query** | **String**| Containing | [optional] 
+ **count** | **Integer**| Number of elements to return | [optional] [default to 25]
+ **fields** | **String**| Fields filter pattern | [optional] [default to id, name]
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **sorting** | **String**| Sorting pattern | [optional] 
+
+### Return type
+
+[**ListResponseProductUnit**](ListResponseProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseProductUnit search(opts)
+
+Find product units corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductunitApi.new
+
+opts = { 
+  id: 'id_example', # String | List of IDs
+  name: 'name_example', # String | Names
+  name_short: 'name_short_example', # String | Short names
+  common_code: 'common_code_example', # String | Common codes
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find product units corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductunitApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| List of IDs | [optional] 
+ **name** | **String**| Names | [optional] 
+ **name_short** | **String**| Short names | [optional] 
+ **common_code** | **String**| Common codes | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseProductUnit**](ListResponseProductUnit.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

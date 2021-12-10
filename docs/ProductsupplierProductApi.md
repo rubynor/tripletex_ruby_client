@@ -1,0 +1,407 @@
+# TripletexRubyClient::ProductsupplierProductApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](ProductsupplierProductApi.md#delete) | **DELETE** /product/supplierProduct/{id} | [BETA] Delete supplierProduct.
+[**get**](ProductsupplierProductApi.md#get) | **GET** /product/supplierProduct/{id} | Get supplierProduct by ID.
+[**post**](ProductsupplierProductApi.md#post) | **POST** /product/supplierProduct | Create new supplierProduct.
+[**post_list**](ProductsupplierProductApi.md#post_list) | **POST** /product/supplierProduct/list | Create list of new supplierProduct.
+[**put**](ProductsupplierProductApi.md#put) | **PUT** /product/supplierProduct/{id} | Update supplierProduct.
+[**put_list**](ProductsupplierProductApi.md#put_list) | **PUT** /product/supplierProduct/list | [BETA] Update a list of supplierProduct.
+[**search**](ProductsupplierProductApi.md#search) | **GET** /product/supplierProduct | Find products corresponding with sent data.
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete supplierProduct.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete supplierProduct.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperSupplierProduct get(id, opts)
+
+Get supplierProduct by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Get supplierProduct by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperSupplierProduct**](ResponseWrapperSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperSupplierProduct post(opts)
+
+Create new supplierProduct.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+opts = { 
+  body: TripletexRubyClient::SupplierProduct.new # SupplierProduct | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #Create new supplierProduct.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SupplierProduct**](SupplierProduct.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperSupplierProduct**](ResponseWrapperSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponseSupplierProduct post_list(opts)
+
+Create list of new supplierProduct.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+opts = { 
+  body: [TripletexRubyClient::SupplierProduct.new] # Array<SupplierProduct> | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #Create list of new supplierProduct.
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;SupplierProduct&gt;**](SupplierProduct.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseSupplierProduct**](ListResponseSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperSupplierProduct put(id, opts)
+
+Update supplierProduct.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::SupplierProduct.new # SupplierProduct | Partial object describing what should be updated
+}
+
+begin
+  #Update supplierProduct.
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**SupplierProduct**](SupplierProduct.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperSupplierProduct**](ResponseWrapperSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put_list**
+> ListResponseSupplierProduct put_list(opts)
+
+[BETA] Update a list of supplierProduct.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+opts = { 
+  body: [TripletexRubyClient::SupplierProduct.new] # Array<SupplierProduct> | JSON representing updates to object. Should have ID and version set.
+}
+
+begin
+  #[BETA] Update a list of supplierProduct.
+  result = api_instance.put_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->put_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;SupplierProduct&gt;**](SupplierProduct.md)| JSON representing updates to object. Should have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseSupplierProduct**](ListResponseSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseSupplierProduct search(opts)
+
+Find products corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProductsupplierProductApi.new
+
+opts = { 
+  product_id: 56, # Integer | Id of product to find supplier products for.
+  vendor_id: 56, # Integer | Id of vendor to find supplier products for.
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find products corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProductsupplierProductApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **product_id** | **Integer**| Id of product to find supplier products for. | [optional] 
+ **vendor_id** | **Integer**| Id of vendor to find supplier products for. | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseSupplierProduct**](ListResponseSupplierProduct.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

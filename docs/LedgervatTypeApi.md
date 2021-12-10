@@ -1,0 +1,195 @@
+# TripletexRubyClient::LedgervatTypeApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**create_relative_vat_type**](LedgervatTypeApi.md#create_relative_vat_type) | **PUT** /ledger/vatType/createRelativeVatType | [BETA] Create a new relative VAT Type. These are used if the company has &#39;forholdsmessig fradrag for inngående MVA&#39;.
+[**get**](LedgervatTypeApi.md#get) | **GET** /ledger/vatType/{id} | Get vat type by ID.
+[**search**](LedgervatTypeApi.md#search) | **GET** /ledger/vatType | Find vat types corresponding with sent data.
+
+
+# **create_relative_vat_type**
+> ResponseWrapperVatType create_relative_vat_type(name, vat_type_id, percentage)
+
+[BETA] Create a new relative VAT Type. These are used if the company has 'forholdsmessig fradrag for inngående MVA'.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::LedgervatTypeApi.new
+
+name = 'name_example' # String | VAT type name, max 8 characters.
+
+vat_type_id = 56 # Integer | VAT type ID. The relative VAT type will behave like this VAT type, except for the basis for calculating the VAT deduction, which is decided by the basis percentage.
+
+percentage = 8.14 # Float | Basis percentage. This percentage will be multiplied with the transaction amount to find the amount that will be the basis for calculating the deduction amount.
+
+
+begin
+  #[BETA] Create a new relative VAT Type. These are used if the company has 'forholdsmessig fradrag for inngående MVA'.
+  result = api_instance.create_relative_vat_type(name, vat_type_id, percentage)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling LedgervatTypeApi->create_relative_vat_type: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **String**| VAT type name, max 8 characters. | 
+ **vat_type_id** | **Integer**| VAT type ID. The relative VAT type will behave like this VAT type, except for the basis for calculating the VAT deduction, which is decided by the basis percentage. | 
+ **percentage** | **Float**| Basis percentage. This percentage will be multiplied with the transaction amount to find the amount that will be the basis for calculating the deduction amount. | 
+
+### Return type
+
+[**ResponseWrapperVatType**](ResponseWrapperVatType.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperVatType get(id, opts)
+
+Get vat type by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::LedgervatTypeApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Get vat type by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling LedgervatTypeApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperVatType**](ResponseWrapperVatType.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseVatType search(opts)
+
+Find vat types corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::LedgervatTypeApi.new
+
+opts = { 
+  id: 'id_example', # String | List of IDs
+  number: 'number_example', # String | List of IDs
+  type_of_vat: 'type_of_vat_example', # String | Type of VAT
+  vat_date: 'vat_date_example', # String | yyyy-MM-dd. Defaults to today. Note that this is only used in combination with typeOfVat-parameter. Only valid vatTypes on the given date are returned.
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find vat types corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling LedgervatTypeApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| List of IDs | [optional] 
+ **number** | **String**| List of IDs | [optional] 
+ **type_of_vat** | **String**| Type of VAT | [optional] 
+ **vat_date** | **String**| yyyy-MM-dd. Defaults to today. Note that this is only used in combination with typeOfVat-parameter. Only valid vatTypes on the given date are returned. | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseVatType**](ListResponseVatType.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

@@ -1,0 +1,462 @@
+# TripletexRubyClient::EmployeecategoryApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](EmployeecategoryApi.md#delete) | **DELETE** /employee/category/{id} | [BETA] Delete employee category by ID
+[**delete_by_ids**](EmployeecategoryApi.md#delete_by_ids) | **DELETE** /employee/category/list | [BETA] Delete multiple employee categories
+[**get**](EmployeecategoryApi.md#get) | **GET** /employee/category/{id} | [BETA] Get employee category by ID.
+[**post**](EmployeecategoryApi.md#post) | **POST** /employee/category | [BETA] Create a new employee category.
+[**post_list**](EmployeecategoryApi.md#post_list) | **POST** /employee/category/list | [BETA] Create new employee categories.
+[**put**](EmployeecategoryApi.md#put) | **PUT** /employee/category/{id} | [BETA] Update employee category information.
+[**put_list**](EmployeecategoryApi.md#put_list) | **PUT** /employee/category/list | [BETA] Update multiple employee categories.
+[**search**](EmployeecategoryApi.md#search) | **GET** /employee/category | [BETA] Find employee category corresponding with sent data.
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete employee category by ID
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete employee category by ID
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **delete_by_ids**
+> delete_by_ids(ids)
+
+[BETA] Delete multiple employee categories
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+ids = 'ids_example' # String | ID of the elements
+
+
+begin
+  #[BETA] Delete multiple employee categories
+  api_instance.delete_by_ids(ids)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->delete_by_ids: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **String**| ID of the elements | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperEmployeeCategory get(id, opts)
+
+[BETA] Get employee category by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get employee category by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperEmployeeCategory**](ResponseWrapperEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperEmployeeCategory post(opts)
+
+[BETA] Create a new employee category.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+opts = { 
+  body: TripletexRubyClient::EmployeeCategory.new # EmployeeCategory | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create a new employee category.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**EmployeeCategory**](EmployeeCategory.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperEmployeeCategory**](ResponseWrapperEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponseEmployeeCategory post_list(opts)
+
+[BETA] Create new employee categories.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+opts = { 
+  body: [TripletexRubyClient::EmployeeCategory.new] # Array<EmployeeCategory> | JSON representing a list of new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create new employee categories.
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;EmployeeCategory&gt;**](EmployeeCategory.md)| JSON representing a list of new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseEmployeeCategory**](ListResponseEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperEmployeeCategory put(id, opts)
+
+[BETA] Update employee category information.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::EmployeeCategory.new # EmployeeCategory | Partial object describing what should be updated
+}
+
+begin
+  #[BETA] Update employee category information.
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**EmployeeCategory**](EmployeeCategory.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperEmployeeCategory**](ResponseWrapperEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put_list**
+> ListResponseEmployeeCategory put_list(opts)
+
+[BETA] Update multiple employee categories.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+opts = { 
+  body: [TripletexRubyClient::EmployeeCategory.new] # Array<EmployeeCategory> | JSON representing updates to object. Should have ID and version set.
+}
+
+begin
+  #[BETA] Update multiple employee categories.
+  result = api_instance.put_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->put_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;EmployeeCategory&gt;**](EmployeeCategory.md)| JSON representing updates to object. Should have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponseEmployeeCategory**](ListResponseEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseEmployeeCategory search(opts)
+
+[BETA] Find employee category corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::EmployeecategoryApi.new
+
+opts = { 
+  id: 'id_example', # String | List of IDs
+  name: 'name_example', # String | Containing
+  number: 'number_example', # String | List of IDs
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find employee category corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling EmployeecategoryApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **String**| List of IDs | [optional] 
+ **name** | **String**| Containing | [optional] 
+ **number** | **String**| List of IDs | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseEmployeeCategory**](ListResponseEmployeeCategory.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

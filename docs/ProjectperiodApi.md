@@ -1,0 +1,392 @@
+# TripletexRubyClient::ProjectperiodApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**get_budget_status**](ProjectperiodApi.md#get_budget_status) | **GET** /project/{id}/period/budgetStatus | Get the budget status for the project period
+[**hourlist_report**](ProjectperiodApi.md#hourlist_report) | **GET** /project/{id}/period/hourlistReport | Find hourlist report by project period.
+[**invoiced**](ProjectperiodApi.md#invoiced) | **GET** /project/{id}/period/invoiced | Find invoiced info by project period.
+[**invoicing_reserve**](ProjectperiodApi.md#invoicing_reserve) | **GET** /project/{id}/period/invoicingReserve | Find invoicing reserve by project period.
+[**monthly_status**](ProjectperiodApi.md#monthly_status) | **GET** /project/{id}/period/monthlyStatus | Find overall status by project period.
+[**overall_status**](ProjectperiodApi.md#overall_status) | **GET** /project/{id}/period/overallStatus | Find overall status by project period.
+
+
+# **get_budget_status**
+> ResponseWrapperProjectBudgetStatus get_budget_status(id, opts)
+
+Get the budget status for the project period
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Get the budget status for the project period
+  result = api_instance.get_budget_status(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->get_budget_status: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProjectBudgetStatus**](ResponseWrapperProjectBudgetStatus.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **hourlist_report**
+> ResponseWrapperProjectPeriodHourlyReport hourlist_report(date_from, date_to, id, opts)
+
+Find hourlist report by project period.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+date_from = 'date_from_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+date_to = 'date_to_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find hourlist report by project period.
+  result = api_instance.hourlist_report(date_from, date_to, id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->hourlist_report: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **date_to** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProjectPeriodHourlyReport**](ResponseWrapperProjectPeriodHourlyReport.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **invoiced**
+> ResponseWrapperProjectPeriodInvoiced invoiced(date_from, date_to, id, opts)
+
+Find invoiced info by project period.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+date_from = 'date_from_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+date_to = 'date_to_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find invoiced info by project period.
+  result = api_instance.invoiced(date_from, date_to, id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->invoiced: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **date_to** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProjectPeriodInvoiced**](ResponseWrapperProjectPeriodInvoiced.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **invoicing_reserve**
+> ResponseWrapperProjectPeriodInvoicingReserve invoicing_reserve(date_from, date_to, id, opts)
+
+Find invoicing reserve by project period.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+date_from = 'date_from_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+date_to = 'date_to_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find invoicing reserve by project period.
+  result = api_instance.invoicing_reserve(date_from, date_to, id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->invoicing_reserve: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **date_to** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProjectPeriodInvoicingReserve**](ResponseWrapperProjectPeriodInvoicingReserve.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **monthly_status**
+> ListResponseProjectPeriodMonthlyStatus monthly_status(date_from, date_to, id, opts)
+
+Find overall status by project period.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+date_from = 'date_from_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+date_to = 'date_to_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find overall status by project period.
+  result = api_instance.monthly_status(date_from, date_to, id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->monthly_status: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **date_to** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **id** | **Integer**| Element ID | 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseProjectPeriodMonthlyStatus**](ListResponseProjectPeriodMonthlyStatus.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **overall_status**
+> ResponseWrapperProjectPeriodOverallStatus overall_status(date_from, date_to, id, opts)
+
+Find overall status by project period.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::ProjectperiodApi.new
+
+date_from = 'date_from_example' # String | Format is yyyy-MM-dd (from and incl.).
+
+date_to = 'date_to_example' # String | Format is yyyy-MM-dd (to and excl.).
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #Find overall status by project period.
+  result = api_instance.overall_status(date_from, date_to, id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling ProjectperiodApi->overall_status: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | 
+ **date_to** | **String**| Format is yyyy-MM-dd (to and excl.). | 
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperProjectPeriodOverallStatus**](ResponseWrapperProjectPeriodOverallStatus.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

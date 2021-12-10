@@ -1,0 +1,300 @@
+# TripletexRubyClient::OrderorderGroupApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](OrderorderGroupApi.md#delete) | **DELETE** /order/orderGroup/{id} | [Beta] Delete orderGroup by ID.
+[**get**](OrderorderGroupApi.md#get) | **GET** /order/orderGroup/{id} | [Beta] Get orderGroup by ID. A orderGroup is a way to group orderLines, and add comments and subtotals
+[**post**](OrderorderGroupApi.md#post) | **POST** /order/orderGroup | [Beta] Post orderGroup.
+[**put**](OrderorderGroupApi.md#put) | **PUT** /order/orderGroup | [Beta] Put orderGroup.
+[**search**](OrderorderGroupApi.md#search) | **GET** /order/orderGroup | [BETA] Find orderGroups corresponding with sent data.
+
+
+# **delete**
+> delete(id)
+
+[Beta] Delete orderGroup by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::OrderorderGroupApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[Beta] Delete orderGroup by ID.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling OrderorderGroupApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperOrderGroup get(id, opts)
+
+[Beta] Get orderGroup by ID. A orderGroup is a way to group orderLines, and add comments and subtotals
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::OrderorderGroupApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[Beta] Get orderGroup by ID. A orderGroup is a way to group orderLines, and add comments and subtotals
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling OrderorderGroupApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperOrderGroup**](ResponseWrapperOrderGroup.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperOrderGroup post(opts)
+
+[Beta] Post orderGroup.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::OrderorderGroupApi.new
+
+opts = { 
+  body: TripletexRubyClient::OrderGroup.new, # OrderGroup | JSON representing the new object to be created. Should not have ID and version set.
+  order_line_ids: 'order_line_ids_example' # String | List of IDs
+}
+
+begin
+  #[Beta] Post orderGroup.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling OrderorderGroupApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderGroup**](OrderGroup.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+ **order_line_ids** | **String**| List of IDs | [optional] 
+
+### Return type
+
+[**ResponseWrapperOrderGroup**](ResponseWrapperOrderGroup.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperOrderGroup put(opts)
+
+[Beta] Put orderGroup.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::OrderorderGroupApi.new
+
+opts = { 
+  body: TripletexRubyClient::OrderGroup.new, # OrderGroup | JSON representing the new object to be created. Should not have ID and version set.
+  order_line_ids: 'order_line_ids_example', # String | List of IDs
+  remove_existing_order_lines: false # BOOLEAN | Should existing orderLines be removed from this orderGroup
+}
+
+begin
+  #[Beta] Put orderGroup.
+  result = api_instance.put(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling OrderorderGroupApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**OrderGroup**](OrderGroup.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+ **order_line_ids** | **String**| List of IDs | [optional] 
+ **remove_existing_order_lines** | **BOOLEAN**| Should existing orderLines be removed from this orderGroup | [optional] [default to false]
+
+### Return type
+
+[**ResponseWrapperOrderGroup**](ResponseWrapperOrderGroup.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseOrderGroup search(opts)
+
+[BETA] Find orderGroups corresponding with sent data.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::OrderorderGroupApi.new
+
+opts = { 
+  ids: 'ids_example', # String | List of IDs
+  order_ids: 'order_ids_example', # String | List of IDs
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find orderGroups corresponding with sent data.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling OrderorderGroupApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **String**| List of IDs | [optional] 
+ **order_ids** | **String**| List of IDs | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseOrderGroup**](ListResponseOrderGroup.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

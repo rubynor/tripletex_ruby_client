@@ -1,0 +1,603 @@
+# TripletexRubyClient::PurchaseOrdergoodsReceiptApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**confirm**](PurchaseOrdergoodsReceiptApi.md#confirm) | **PUT** /purchaseOrder/goodsReceipt/{id}/:confirm | [BETA] Confirm goods receipt. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**delete**](PurchaseOrdergoodsReceiptApi.md#delete) | **DELETE** /purchaseOrder/goodsReceipt/{id} | [BETA] Delete goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**delete_by_ids**](PurchaseOrdergoodsReceiptApi.md#delete_by_ids) | **DELETE** /purchaseOrder/goodsReceipt/list | [BETA] Delete multiple goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**get**](PurchaseOrdergoodsReceiptApi.md#get) | **GET** /purchaseOrder/goodsReceipt/{id} | [BETA] Get goods receipt by purchase order ID. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**post**](PurchaseOrdergoodsReceiptApi.md#post) | **POST** /purchaseOrder/goodsReceipt | [BETA] Register goods receipt without an existing purchase order. When registration of several goods receipt, use /list for better performance. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**post_list**](PurchaseOrdergoodsReceiptApi.md#post_list) | **POST** /purchaseOrder/goodsReceipt/list | [BETA] Register multiple goods receipt without an existing purchase order. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**put**](PurchaseOrdergoodsReceiptApi.md#put) | **PUT** /purchaseOrder/goodsReceipt/{id} | [BETA] Update goods receipt. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**receive_and_confirm**](PurchaseOrdergoodsReceiptApi.md#receive_and_confirm) | **PUT** /purchaseOrder/goodsReceipt/{id}/:receiveAndConfirm | [BETA]  Receive all ordered products and approve goods receipt. Only available for users that have activated the Logistics/Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**register_goods_receipt**](PurchaseOrdergoodsReceiptApi.md#register_goods_receipt) | **PUT** /purchaseOrder/goodsReceipt/{id}/:registerGoodsReceipt | [BETA] Register goods receipt. Quantity received on the products is set to the same as quantity ordered. To update the quantity received, use PUT /purchaseOrder/goodsReceiptLine/{id}. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+[**search**](PurchaseOrdergoodsReceiptApi.md#search) | **GET** /purchaseOrder/goodsReceipt | [BETA] Get goods receipt. Only available for users that have activated the Logistics Plus Beta-program in &#39;Our customer account&#39;
+
+
+# **confirm**
+> ResponseWrapperPurchaseOrder confirm(id, opts)
+
+[BETA] Confirm goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Purchase Order ID.
+
+opts = { 
+  create_rest_order: false, # BOOLEAN | Create restorder if quantity received is less than ordered
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Confirm goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.confirm(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->confirm: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Purchase Order ID. | 
+ **create_rest_order** | **BOOLEAN**| Create restorder if quantity received is less than ordered | [optional] [default to false]
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **delete_by_ids**
+> delete_by_ids(ids)
+
+[BETA] Delete multiple goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+ids = 'ids_example' # String | ID of the elements
+
+
+begin
+  #[BETA] Delete multiple goods receipt by ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  api_instance.delete_by_ids(ids)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->delete_by_ids: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **String**| ID of the elements | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperGoodsReceipt get(id, opts)
+
+[BETA] Get goods receipt by purchase order ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get goods receipt by purchase order ID. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperGoodsReceipt**](ResponseWrapperGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperGoodsReceipt post(opts)
+
+[BETA] Register goods receipt without an existing purchase order. When registration of several goods receipt, use /list for better performance. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+opts = { 
+  body: TripletexRubyClient::GoodsReceipt.new, # GoodsReceipt | JSON representing the new object to be created. Should not have ID and version set.
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Register goods receipt without an existing purchase order. When registration of several goods receipt, use /list for better performance. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GoodsReceipt**](GoodsReceipt.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperGoodsReceipt**](ResponseWrapperGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponseGoodsReceipt post_list(opts)
+
+[BETA] Register multiple goods receipt without an existing purchase order. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+opts = { 
+  body: [TripletexRubyClient::GoodsReceipt.new], # Array<GoodsReceipt> | JSON representing a list of new object to be created. Should not have ID and version set.
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Register multiple goods receipt without an existing purchase order. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;GoodsReceipt&gt;**](GoodsReceipt.md)| JSON representing a list of new object to be created. Should not have ID and version set. | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ListResponseGoodsReceipt**](ListResponseGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperGoodsReceipt put(id, opts)
+
+[BETA] Update goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Goods Receipt ID.
+
+opts = { 
+  body: TripletexRubyClient::GoodsReceipt.new, # GoodsReceipt | Partial object describing what should be updated
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Update goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Goods Receipt ID. | 
+ **body** | [**GoodsReceipt**](GoodsReceipt.md)| Partial object describing what should be updated | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperGoodsReceipt**](ResponseWrapperGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **receive_and_confirm**
+> ResponseWrapperPurchaseOrder receive_and_confirm(id, received_date, opts)
+
+[BETA]  Receive all ordered products and approve goods receipt. Only available for users that have activated the Logistics/Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Purchase Order ID.
+
+received_date = 'received_date_example' # String | The approval date for the subscription.
+
+opts = { 
+  inventory_id: 56, # Integer | ID of inventory. Main inventory is set as default
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA]  Receive all ordered products and approve goods receipt. Only available for users that have activated the Logistics/Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.receive_and_confirm(id, received_date, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->receive_and_confirm: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Purchase Order ID. | 
+ **received_date** | **String**| The approval date for the subscription. | 
+ **inventory_id** | **Integer**| ID of inventory. Main inventory is set as default | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **register_goods_receipt**
+> ResponseWrapperGoodsReceipt register_goods_receipt(id, registration_date, opts)
+
+[BETA] Register goods receipt. Quantity received on the products is set to the same as quantity ordered. To update the quantity received, use PUT /purchaseOrder/goodsReceiptLine/{id}. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+id = 56 # Integer | Purchase Order ID.
+
+registration_date = 'registration_date_example' # String | yyyy-MM-dd. Defaults to today.
+
+opts = { 
+  inventory_id: 56, # Integer | ID of inventory. Main inventory is set as default
+  comment: 'comment_example', # String | Containing
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Register goods receipt. Quantity received on the products is set to the same as quantity ordered. To update the quantity received, use PUT /purchaseOrder/goodsReceiptLine/{id}. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.register_goods_receipt(id, registration_date, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->register_goods_receipt: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Purchase Order ID. | 
+ **registration_date** | **String**| yyyy-MM-dd. Defaults to today. | 
+ **inventory_id** | **Integer**| ID of inventory. Main inventory is set as default | [optional] 
+ **comment** | **String**| Containing | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperGoodsReceipt**](ResponseWrapperGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponseGoodsReceipt search(opts)
+
+[BETA] Get goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrdergoodsReceiptApi.new
+
+opts = { 
+  received_date_from: 'received_date_from_example', # String | Format is yyyy-MM-dd (from and incl.).
+  received_date_to: 'received_date_to_example', # String | Format is yyyy-MM-dd (to and incl.).
+  status: 'status_example', # String | Equals
+  without_purchase: false, # BOOLEAN | Equals
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get goods receipt. Only available for users that have activated the Logistics Plus Beta-program in 'Our customer account'
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrdergoodsReceiptApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **received_date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | [optional] 
+ **received_date_to** | **String**| Format is yyyy-MM-dd (to and incl.). | [optional] 
+ **status** | **String**| Equals | [optional] 
+ **without_purchase** | **BOOLEAN**| Equals | [optional] [default to false]
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseGoodsReceipt**](ListResponseGoodsReceipt.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+

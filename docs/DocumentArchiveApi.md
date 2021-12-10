@@ -1,0 +1,1048 @@
+# TripletexRubyClient::DocumentArchiveApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**account_post**](DocumentArchiveApi.md#account_post) | **POST** /documentArchive/account/{id} | [BETA] Upload file to Account Document Archive.
+[**customer_post**](DocumentArchiveApi.md#customer_post) | **POST** /documentArchive/customer/{id} | [BETA] Upload file to Customer Document Archive.
+[**delete**](DocumentArchiveApi.md#delete) | **DELETE** /documentArchive/{id} | [BETA] Delete document archive.
+[**employee_post**](DocumentArchiveApi.md#employee_post) | **POST** /documentArchive/employee/{id} | [BETA] Upload file to Employee Document Archive.
+[**get_account**](DocumentArchiveApi.md#get_account) | **GET** /documentArchive/account/{id} | [BETA] Find documents archived associated with account object type.
+[**get_customer**](DocumentArchiveApi.md#get_customer) | **GET** /documentArchive/customer/{id} | [BETA] Find documents archived associated with customer object type.
+[**get_employee**](DocumentArchiveApi.md#get_employee) | **GET** /documentArchive/employee/{id} | [BETA] Find documents archived associated with employee object type.
+[**get_product**](DocumentArchiveApi.md#get_product) | **GET** /documentArchive/product/{id} | [BETA] Find documents archived associated with product object type.
+[**get_project**](DocumentArchiveApi.md#get_project) | **GET** /documentArchive/project/{id} | [BETA] Find documents archived associated with project object type.
+[**get_prospect**](DocumentArchiveApi.md#get_prospect) | **GET** /documentArchive/prospect/{id} | [BETA] Find documents archived associated with prospect object type.
+[**get_supplier**](DocumentArchiveApi.md#get_supplier) | **GET** /documentArchive/supplier/{id} | [BETA] Find documents archived associated with supplier object type.
+[**product_post**](DocumentArchiveApi.md#product_post) | **POST** /documentArchive/product/{id} | [BETA] Upload file to Product Document Archive.
+[**project_post**](DocumentArchiveApi.md#project_post) | **POST** /documentArchive/project/{id} | [BETA] Upload file to Project Document Archive.
+[**prospect_post**](DocumentArchiveApi.md#prospect_post) | **POST** /documentArchive/prospect/{id} | [BETA] Upload file to Prospect Document Archive.
+[**put**](DocumentArchiveApi.md#put) | **PUT** /documentArchive/{id} | [BETA] Update document archive.
+[**reception_post**](DocumentArchiveApi.md#reception_post) | **POST** /documentArchive/reception | [BETA] Upload a file to the document archive reception. Send as multipart form.
+[**supplier_post**](DocumentArchiveApi.md#supplier_post) | **POST** /documentArchive/supplier/{id} | [BETA] Upload file to Supplier Document Archive.
+
+
+# **account_post**
+> ResponseWrapperDocumentArchive account_post(file, id)
+
+[BETA] Upload file to Account Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Account Document Archive.
+  result = api_instance.account_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->account_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **customer_post**
+> ResponseWrapperDocumentArchive customer_post(file, id)
+
+[BETA] Upload file to Customer Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Customer Document Archive.
+  result = api_instance.customer_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->customer_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete document archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete document archive.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **employee_post**
+> ResponseWrapperDocumentArchive employee_post(file, id)
+
+[BETA] Upload file to Employee Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Employee Document Archive.
+  result = api_instance.employee_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->employee_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **get_account**
+> ListResponseDocumentArchive get_account(id, opts)
+
+[BETA] Find documents archived associated with account object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with account object type.
+  result = api_instance.get_account(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_account: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_customer**
+> ListResponseDocumentArchive get_customer(id, opts)
+
+[BETA] Find documents archived associated with customer object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with customer object type.
+  result = api_instance.get_customer(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_customer: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_employee**
+> ListResponseDocumentArchive get_employee(id, opts)
+
+[BETA] Find documents archived associated with employee object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with employee object type.
+  result = api_instance.get_employee(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_employee: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_product**
+> ListResponseDocumentArchive get_product(id, opts)
+
+[BETA] Find documents archived associated with product object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with product object type.
+  result = api_instance.get_product(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_product: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_project**
+> ListResponseDocumentArchive get_project(id, opts)
+
+[BETA] Find documents archived associated with project object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with project object type.
+  result = api_instance.get_project(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_project: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_prospect**
+> ListResponseDocumentArchive get_prospect(id, opts)
+
+[BETA] Find documents archived associated with prospect object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with prospect object type.
+  result = api_instance.get_prospect(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_prospect: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get_supplier**
+> ListResponseDocumentArchive get_supplier(id, opts)
+
+[BETA] Find documents archived associated with supplier object type.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  period_date_from: 'period_date_from_example', # String | From and including
+  period_date_to: 'period_date_to_example', # String | To and excluding
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find documents archived associated with supplier object type.
+  result = api_instance.get_supplier(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->get_supplier: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **period_date_from** | **String**| From and including | [optional] 
+ **period_date_to** | **String**| To and excluding | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponseDocumentArchive**](ListResponseDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **product_post**
+> ResponseWrapperDocumentArchive product_post(file, id)
+
+[BETA] Upload file to Product Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Product Document Archive.
+  result = api_instance.product_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->product_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **project_post**
+> ResponseWrapperDocumentArchive project_post(file, id)
+
+[BETA] Upload file to Project Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Project Document Archive.
+  result = api_instance.project_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->project_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **prospect_post**
+> ResponseWrapperDocumentArchive prospect_post(file, id)
+
+[BETA] Upload file to Prospect Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Prospect Document Archive.
+  result = api_instance.prospect_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->prospect_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperDocumentArchive put(id, opts)
+
+[BETA] Update document archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::DocumentArchive.new # DocumentArchive | Partial object describing what should be updated
+}
+
+begin
+  #[BETA] Update document archive.
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**DocumentArchive**](DocumentArchive.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **reception_post**
+> ResponseWrapperDocumentArchive reception_post(file)
+
+[BETA] Upload a file to the document archive reception. Send as multipart form.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+
+begin
+  #[BETA] Upload a file to the document archive reception. Send as multipart form.
+  result = api_instance.reception_post(file)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->reception_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **supplier_post**
+> ResponseWrapperDocumentArchive supplier_post(file, id)
+
+[BETA] Upload file to Supplier Document Archive.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::DocumentArchiveApi.new
+
+file = File.new('/path/to/file.txt') # File | The file
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Upload file to Supplier Document Archive.
+  result = api_instance.supplier_post(file, id)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling DocumentArchiveApi->supplier_post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **file** | **File**| The file | 
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+[**ResponseWrapperDocumentArchive**](ResponseWrapperDocumentArchive.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+

@@ -1,0 +1,606 @@
+# TripletexRubyClient::PurchaseOrderApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](PurchaseOrderApi.md#delete) | **DELETE** /purchaseOrder/{id} |  [BETA] Delete purchase order.
+[**delete_attachment**](PurchaseOrderApi.md#delete_attachment) | **DELETE** /purchaseOrder/{id}/attachment | [BETA] Delete attachment.
+[**get**](PurchaseOrderApi.md#get) | **GET** /purchaseOrder/{id} |  [BETA] Find purchase order by ID.
+[**post**](PurchaseOrderApi.md#post) | **POST** /purchaseOrder | [BETA] Creates a new purchase order
+[**put**](PurchaseOrderApi.md#put) | **PUT** /purchaseOrder/{id} |  [BETA] Update purchase order.
+[**search**](PurchaseOrderApi.md#search) | **GET** /purchaseOrder | [BETA] Find purchase orders with send data
+[**send**](PurchaseOrderApi.md#send) | **PUT** /purchaseOrder/{id}/:send | [BETA] Send purchase order by id and sendType.
+[**send_by_email**](PurchaseOrderApi.md#send_by_email) | **PUT** /purchaseOrder/{id}/:sendByEmail | [BETA] Send purchase order by customisable email.
+[**upload_attachment**](PurchaseOrderApi.md#upload_attachment) | **POST** /purchaseOrder/{id}/attachment | [BETA] Upload attachment to Purchase Order.
+[**upload_attachments**](PurchaseOrderApi.md#upload_attachments) | **POST** /purchaseOrder/{id}/attachment/list | Upload multiple attachments to Purchase Order.
+
+
+# **delete**
+> delete(id)
+
+ [BETA] Delete purchase order.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  # [BETA] Delete purchase order.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **delete_attachment**
+> delete_attachment(id)
+
+[BETA] Delete attachment.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | ID of purchase order containing the attachment to delete.
+
+
+begin
+  #[BETA] Delete attachment.
+  api_instance.delete_attachment(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->delete_attachment: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| ID of purchase order containing the attachment to delete. | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperPurchaseOrder get(id, opts)
+
+ [BETA] Find purchase order by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  # [BETA] Find purchase order by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperPurchaseOrder post(opts)
+
+[BETA] Creates a new purchase order
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+opts = { 
+  body: TripletexRubyClient::PurchaseOrder.new # PurchaseOrder | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Creates a new purchase order
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PurchaseOrder**](PurchaseOrder.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperPurchaseOrder put(id, opts)
+
+ [BETA] Update purchase order.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::PurchaseOrder.new # PurchaseOrder | Partial object describing what should be updated
+}
+
+begin
+  # [BETA] Update purchase order.
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**PurchaseOrder**](PurchaseOrder.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponsePurchaseOrder search(opts)
+
+[BETA] Find purchase orders with send data
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+opts = { 
+  number: 'number_example', # String | Equals
+  delivery_date_from: 'delivery_date_from_example', # String | Format is yyyy-MM-dd (from and incl.).
+  delivery_date_to: 'delivery_date_to_example', # String | Format is yyyy-MM-dd (to and incl.).
+  creation_date_from: 'creation_date_from_example', # String | Format is yyyy-MM-dd (from and incl.).
+  creation_date_to: 'creation_date_to_example', # String | Format is yyyy-MM-dd (to and incl.).
+  id: 'id_example', # String | List of IDs
+  supplier_id: 'supplier_id_example', # String | List of IDs
+  project_id: 'project_id_example', # String | List of IDs
+  is_closed: true, # BOOLEAN | Equals
+  with_deviation_only: false, # BOOLEAN | Equals
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find purchase orders with send data
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **number** | **String**| Equals | [optional] 
+ **delivery_date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | [optional] 
+ **delivery_date_to** | **String**| Format is yyyy-MM-dd (to and incl.). | [optional] 
+ **creation_date_from** | **String**| Format is yyyy-MM-dd (from and incl.). | [optional] 
+ **creation_date_to** | **String**| Format is yyyy-MM-dd (to and incl.). | [optional] 
+ **id** | **String**| List of IDs | [optional] 
+ **supplier_id** | **String**| List of IDs | [optional] 
+ **project_id** | **String**| List of IDs | [optional] 
+ **is_closed** | **BOOLEAN**| Equals | [optional] 
+ **with_deviation_only** | **BOOLEAN**| Equals | [optional] [default to false]
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponsePurchaseOrder**](ListResponsePurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **send**
+> ResponseWrapperPurchaseOrder send(id, opts)
+
+[BETA] Send purchase order by id and sendType.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  send_type: 'DEFAULT' # String | Send type.DEFAULT will determine the send parameter based on the supplier type.If supplier is not wholesaler, receiverEmail from the PO will be used if it's specified.If receiverEmail empty it will take the vendor email.
+}
+
+begin
+  #[BETA] Send purchase order by id and sendType.
+  result = api_instance.send(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->send: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **send_type** | **String**| Send type.DEFAULT will determine the send parameter based on the supplier type.If supplier is not wholesaler, receiverEmail from the PO will be used if it&#39;s specified.If receiverEmail empty it will take the vendor email. | [optional] [default to DEFAULT]
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **send_by_email**
+> ResponseWrapperPurchaseOrder send_by_email(id, email_address, subject, opts)
+
+[BETA] Send purchase order by customisable email.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Element ID
+
+email_address = 'email_address_example' # String | Email address
+
+subject = 'subject_example' # String | Subject
+
+opts = { 
+  message: 'message_example' # String | Message
+}
+
+begin
+  #[BETA] Send purchase order by customisable email.
+  result = api_instance.send_by_email(id, email_address, subject, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->send_by_email: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **email_address** | **String**| Email address | 
+ **subject** | **String**| Subject | 
+ **message** | **String**| Message | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **upload_attachment**
+> ResponseWrapperPurchaseOrder upload_attachment(id, file, opts)
+
+[BETA] Upload attachment to Purchase Order.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Purchase Order ID to upload attachment to.
+
+file = File.new('/path/to/file.txt') # File | The file
+
+opts = { 
+  fields: '*' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Upload attachment to Purchase Order.
+  result = api_instance.upload_attachment(id, file, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->upload_attachment: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Purchase Order ID to upload attachment to. | 
+ **file** | **File**| The file | 
+ **fields** | **String**| Fields filter pattern | [optional] [default to *]
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+
+# **upload_attachments**
+> ResponseWrapperPurchaseOrder upload_attachments(id, body)
+
+Upload multiple attachments to Purchase Order.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderApi.new
+
+id = 56 # Integer | Purchase Order ID to upload attachment to.
+
+body = TripletexRubyClient::FormDataMultiPart.new # FormDataMultiPart | Multipart files
+
+
+begin
+  #Upload multiple attachments to Purchase Order.
+  result = api_instance.upload_attachments(id, body)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderApi->upload_attachments: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Purchase Order ID to upload attachment to. | 
+ **body** | [**FormDataMultiPart**](FormDataMultiPart.md)| Multipart files | 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrder**](ResponseWrapperPurchaseOrder.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: multipart/form-data
+ - **Accept**: Not defined
+
+
+

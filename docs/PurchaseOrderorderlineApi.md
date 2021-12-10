@@ -1,0 +1,232 @@
+# TripletexRubyClient::PurchaseOrderorderlineApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](PurchaseOrderorderlineApi.md#delete) | **DELETE** /purchaseOrder/orderline/{id} |  [BETA] Delete purchase order line.
+[**get**](PurchaseOrderorderlineApi.md#get) | **GET** /purchaseOrder/orderline/{id} |  [BETA] Find purchase order line by ID.
+[**post**](PurchaseOrderorderlineApi.md#post) | **POST** /purchaseOrder/orderline |  [BETA] Creates purchase order line.
+[**put**](PurchaseOrderorderlineApi.md#put) | **PUT** /purchaseOrder/orderline/{id} |  [BETA] Updates purchase order line
+
+
+# **delete**
+> delete(id)
+
+ [BETA] Delete purchase order line.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderorderlineApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  # [BETA] Delete purchase order line.
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderorderlineApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperPurchaseOrderline get(id, opts)
+
+ [BETA] Find purchase order line by ID.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderorderlineApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  # [BETA] Find purchase order line by ID.
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderorderlineApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrderline**](ResponseWrapperPurchaseOrderline.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperPurchaseOrderline post(opts)
+
+ [BETA] Creates purchase order line.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderorderlineApi.new
+
+opts = { 
+  body: TripletexRubyClient::PurchaseOrderline.new # PurchaseOrderline | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  # [BETA] Creates purchase order line.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderorderlineApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PurchaseOrderline**](PurchaseOrderline.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrderline**](ResponseWrapperPurchaseOrderline.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperPurchaseOrderline put(id, opts)
+
+ [BETA] Updates purchase order line
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::PurchaseOrderorderlineApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::PurchaseOrderline.new # PurchaseOrderline | Partial object describing what should be updated
+}
+
+begin
+  # [BETA] Updates purchase order line
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling PurchaseOrderorderlineApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**PurchaseOrderline**](PurchaseOrderline.md)| Partial object describing what should be updated | [optional] 
+
+### Return type
+
+[**ResponseWrapperPurchaseOrderline**](ResponseWrapperPurchaseOrderline.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+

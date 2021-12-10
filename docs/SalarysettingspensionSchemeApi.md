@@ -1,0 +1,458 @@
+# TripletexRubyClient::SalarysettingspensionSchemeApi
+
+All URIs are relative to *https://tripletex.no/v2*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**delete**](SalarysettingspensionSchemeApi.md#delete) | **DELETE** /salary/settings/pensionScheme/{id} | [BETA] Delete a Pension Scheme
+[**delete_by_ids**](SalarysettingspensionSchemeApi.md#delete_by_ids) | **DELETE** /salary/settings/pensionScheme/list | [BETA] delete multiple Pension Schemes.
+[**get**](SalarysettingspensionSchemeApi.md#get) | **GET** /salary/settings/pensionScheme/{id} | [BETA] Get Pension Scheme for a specific ID
+[**post**](SalarysettingspensionSchemeApi.md#post) | **POST** /salary/settings/pensionScheme | [BETA] Create a Pension Scheme.
+[**post_list**](SalarysettingspensionSchemeApi.md#post_list) | **POST** /salary/settings/pensionScheme/list | [BETA] Create multiple Pension Schemes.
+[**put**](SalarysettingspensionSchemeApi.md#put) | **PUT** /salary/settings/pensionScheme/{id} | [BETA] Update a Pension Scheme
+[**put_list**](SalarysettingspensionSchemeApi.md#put_list) | **PUT** /salary/settings/pensionScheme/list | [BETA] update multiple Pension Schemes.
+[**search**](SalarysettingspensionSchemeApi.md#search) | **GET** /salary/settings/pensionScheme | [BETA] Find pension schemes.
+
+
+# **delete**
+> delete(id)
+
+[BETA] Delete a Pension Scheme
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+id = 56 # Integer | Element ID
+
+
+begin
+  #[BETA] Delete a Pension Scheme
+  api_instance.delete(id)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->delete: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **delete_by_ids**
+> delete_by_ids(ids)
+
+[BETA] delete multiple Pension Schemes.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+ids = 'ids_example' # String | ID of the elements
+
+
+begin
+  #[BETA] delete multiple Pension Schemes.
+  api_instance.delete_by_ids(ids)
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->delete_by_ids: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ids** | **String**| ID of the elements | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **get**
+> ResponseWrapperPensionScheme get(id, opts)
+
+[BETA] Get Pension Scheme for a specific ID
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Get Pension Scheme for a specific ID
+  result = api_instance.get(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->get: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ResponseWrapperPensionScheme**](ResponseWrapperPensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post**
+> ResponseWrapperPensionScheme post(opts)
+
+[BETA] Create a Pension Scheme.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+opts = { 
+  body: TripletexRubyClient::PensionScheme.new # PensionScheme | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create a Pension Scheme.
+  result = api_instance.post(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->post: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PensionScheme**](PensionScheme.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperPensionScheme**](ResponseWrapperPensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **post_list**
+> ListResponsePensionScheme post_list(opts)
+
+[BETA] Create multiple Pension Schemes.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+opts = { 
+  body: [TripletexRubyClient::PensionScheme.new] # Array<PensionScheme> | JSON representing a list of new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Create multiple Pension Schemes.
+  result = api_instance.post_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->post_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;PensionScheme&gt;**](PensionScheme.md)| JSON representing a list of new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponsePensionScheme**](ListResponsePensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **put**
+> ResponseWrapperPensionScheme put(id, opts)
+
+[BETA] Update a Pension Scheme
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+id = 56 # Integer | Element ID
+
+opts = { 
+  body: TripletexRubyClient::PensionScheme.new # PensionScheme | JSON representing the new object to be created. Should not have ID and version set.
+}
+
+begin
+  #[BETA] Update a Pension Scheme
+  result = api_instance.put(id, opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->put: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **Integer**| Element ID | 
+ **body** | [**PensionScheme**](PensionScheme.md)| JSON representing the new object to be created. Should not have ID and version set. | [optional] 
+
+### Return type
+
+[**ResponseWrapperPensionScheme**](ResponseWrapperPensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
+# **put_list**
+> ListResponsePensionScheme put_list(opts)
+
+[BETA] update multiple Pension Schemes.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+opts = { 
+  body: [TripletexRubyClient::PensionScheme.new] # Array<PensionScheme> | JSON representing updates to object. Should have ID and version set.
+}
+
+begin
+  #[BETA] update multiple Pension Schemes.
+  result = api_instance.put_list(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->put_list: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**Array&lt;PensionScheme&gt;**](PensionScheme.md)| JSON representing updates to object. Should have ID and version set. | [optional] 
+
+### Return type
+
+[**ListResponsePensionScheme**](ListResponsePensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json; charset=utf-8
+ - **Accept**: Not defined
+
+
+
+# **search**
+> ListResponsePensionScheme search(opts)
+
+[BETA] Find pension schemes.
+
+
+
+### Example
+```ruby
+# load the gem
+require 'tripletex_ruby_client'
+# setup authorization
+TripletexRubyClient.configure do |config|
+  # Configure HTTP basic authorization: tokenAuthScheme
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = TripletexRubyClient::SalarysettingspensionSchemeApi.new
+
+opts = { 
+  number: 'number_example', # String | Equals
+  from: 0, # Integer | From index
+  count: 1000, # Integer | Number of elements to return
+  sorting: 'sorting_example', # String | Sorting pattern
+  fields: 'fields_example' # String | Fields filter pattern
+}
+
+begin
+  #[BETA] Find pension schemes.
+  result = api_instance.search(opts)
+  p result
+rescue TripletexRubyClient::ApiError => e
+  puts "Exception when calling SalarysettingspensionSchemeApi->search: #{e}"
+end
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **number** | **String**| Equals | [optional] 
+ **from** | **Integer**| From index | [optional] [default to 0]
+ **count** | **Integer**| Number of elements to return | [optional] [default to 1000]
+ **sorting** | **String**| Sorting pattern | [optional] 
+ **fields** | **String**| Fields filter pattern | [optional] 
+
+### Return type
+
+[**ListResponsePensionScheme**](ListResponsePensionScheme.md)
+
+### Authorization
+
+[tokenAuthScheme](../README.md#tokenAuthScheme)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+
+
