@@ -21,8 +21,10 @@ require 'tripletex_ruby_client'
 # setup authorization
 TripletexRubyClient.configure do |config|
   # Configure HTTP basic authorization: tokenAuthScheme
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.consumer_token = ENV["TT_CONSUMER_TOKEN"]
+  config.employee_token = ENV["TT_EMPLOYEE_TOKEN"]
+  config.host = Rails.env.production? ? 'https://tripletex.no' : 'https://api.tripletex.io'
+  config.token_expiration_time = Rails.env.production? ? 1.month : 1.day
 end
 
 api_instance = TripletexRubyClient::BalanceSheetApi.new
