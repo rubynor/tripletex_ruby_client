@@ -32,7 +32,7 @@ require 'tripletex_ruby_client/models/altinn_company_module'
 require 'tripletex_ruby_client/models/altinn_instance'
 require 'tripletex_ruby_client/models/annual_account'
 require 'tripletex_ruby_client/models/api_consumer'
-require 'tripletex_ruby_client/models/api_error'
+# require 'tripletex_ruby_client/models/api_error' # wtf is this over-shadower of the real ApiError class?
 require 'tripletex_ruby_client/models/api_validation_message'
 require 'tripletex_ruby_client/models/app_specific'
 require 'tripletex_ruby_client/models/approve_response_dto'
