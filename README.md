@@ -81,6 +81,9 @@ begin
   p result
 rescue TripletexRubyClient::ApiError => e
   puts "Exception when calling ActivityApi->get: #{e}"
+  
+  validation_errors = JSON.parse(error.response_body)["validationMessages"]
+  # do your stuff
 end
 
 ```
