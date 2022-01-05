@@ -4,7 +4,11 @@ TripletexRubyClient - the Ruby gem for the Tripletex API, at the courtesy of Rub
 
 Used in production.
 
-This was built using swagger-codegen first, from [https://tripletex.no/v2-docs/](https://tripletex.no/v2-docs/), but it didn't work out of the box.
+This was built using swagger-codegen first, from [https://tripletex.no/v2-docs/](https://tripletex.no/v2-docs/), then changed manually for it to work.
+
+To help make it better, fork it and create Pull Request, thanks ! 
+
+Team Rubynor
 
 ## Getting Started
 
