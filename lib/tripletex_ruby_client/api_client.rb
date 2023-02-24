@@ -62,10 +62,7 @@ module TripletexRubyClient
           fail ApiError.new(:code => 0,
                             :message => response.return_message)
         else
-          fail ApiError.new(:code => response.code,
-                            :response_headers => response.headers.to_h,
-                            :response_body => response.body),
-               response.status_message
+          raise_error(response)
         end
       end
 
@@ -386,6 +383,26 @@ module TripletexRubyClient
       else
         fail "unknown collection format: #{collection_format.inspect}"
       end
+    end
+
+    private
+
+    def raise_error(response)
+      error_klass = case response.code
+                    when 401
+                      UnauthorizedError
+                    when 429
+                      RateLimitExceededError
+                    when (400..499)
+                      ClientError
+                    when (500..599)
+                      ServerError
+                    else
+                      ApiError
+                     end
+      fail error_klass.new(code: response.code,
+                           response_headers: response.headers.to_h,
+                           response_body: response.body), response.status_message
     end
   end
 end

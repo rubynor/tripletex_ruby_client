@@ -240,4 +240,57 @@ describe TripletexRubyClient::ApiClient do
       expect(api_client.sanitize_filename('.\sun.gif')).to eq('sun.gif')
     end
   end
+
+  describe '#raise_error' do
+    let(:api_client) { TripletexRubyClient::ApiClient.new }
+    let(:response) do
+      instance_double('Response', code: code, headers: {}, body: "", status_message: "")
+    end
+
+    context 'when the response code is 400' do
+      let(:code) { 400 }
+      it 'raises a RateLimitExceededError exception with the response information' do
+        expect { api_client.send(:raise_error, response) }.to raise_error(TripletexRubyClient::ClientError) do |error|
+          expect(error.code).to eq(400)
+        end
+      end
+    end
+
+    context 'when the response code is 401' do
+      let(:code) { 401 }
+      it 'raises an UnauthorizedError exception with the response information' do
+        expect { api_client.send(:raise_error, response) }.to raise_error(TripletexRubyClient::UnauthorizedError) do |error|
+          puts error
+          expect(error.code).to eq(401)
+        end
+      end
+    end
+
+    context 'when the response code is 429' do
+      let(:code) { 429 }
+      it 'raises a RateLimitExceededError exception with the response information' do
+        expect { api_client.send(:raise_error, response) }.to raise_error(TripletexRubyClient::RateLimitExceededError) do |error|
+          expect(error.code).to eq(429)
+        end
+      end
+    end
+
+    context 'when the response code is 500' do
+      let(:code) { 500 }
+      it 'raises a ServerError exception with the response information' do
+        expect { api_client.send(:raise_error, response) }.to raise_error(TripletexRubyClient::ServerError) do |error|
+          expect(error.code).to eq(500)
+        end
+      end
+    end
+
+    context 'when the response code is not handled' do
+      let(:code) { 600 }
+      it 'raises an ApiError exception with the response information' do
+        expect { api_client.send(:raise_error, response) }.to raise_error(TripletexRubyClient::ApiError) do |error|
+          expect(error.code).to eq(600)
+        end
+      end
+    end
+  end
 end
