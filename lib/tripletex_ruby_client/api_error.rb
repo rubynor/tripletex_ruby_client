@@ -43,4 +43,16 @@ module TripletexRubyClient
       end.to_s
     end
   end
+
+  class ClientError < ApiError
+  end
+
+  class ServerError < ApiError
+  end
+
+  class RateLimitExceededError < ClientError
+  end
+
+  class UnauthorizedError < ClientError
+  end
 end
