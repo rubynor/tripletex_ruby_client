@@ -24,6 +24,7 @@ module TripletexRubyClient
     # @param employee_id Element ID
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :year Must be between 1900-2100. Defaults to previous year.
+    # @option opts [String] :return_type 'String' type set as default
     # @return [String]
     def download_pdf(employee_id, opts = {})
       data, _status_code, _headers = download_pdf_with_http_info(employee_id, opts)
@@ -35,6 +36,7 @@ module TripletexRubyClient
     # @param employee_id Element ID
     # @param [Hash] opts the optional parameters
     # @option opts [Integer] :year Must be between 1900-2100. Defaults to previous year.
+    # @option opts [String] :return_type 'String' type set as default
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
     def download_pdf_with_http_info(employee_id, opts = {})
       if @api_client.config.debugging
@@ -60,6 +62,9 @@ module TripletexRubyClient
       # form parameters
       form_params = {}
 
+      # return_type
+      return_type = opts[:'return_type'] || 'String'
+
       # http body (model)
       post_body = nil
       auth_names = ['tokenAuthScheme']
@@ -69,7 +74,7 @@ module TripletexRubyClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'String')
+        :return_type => return_type)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: SalarycompilationApi#download_pdf\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end

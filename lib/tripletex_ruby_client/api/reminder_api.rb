@@ -76,6 +76,7 @@ module TripletexRubyClient
     #
     # @param reminder_id Reminder ID from which PDF is downloaded.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :return_type 'String' type set as default
     # @return [String]
     def download_pdf(reminder_id, opts = {})
       data, _status_code, _headers = download_pdf_with_http_info(reminder_id, opts)
@@ -86,6 +87,7 @@ module TripletexRubyClient
     #
     # @param reminder_id Reminder ID from which PDF is downloaded.
     # @param [Hash] opts the optional parameters
+    # @option opts [String] :return_type 'String' type set as default
     # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
     def download_pdf_with_http_info(reminder_id, opts = {})
       if @api_client.config.debugging
@@ -109,6 +111,9 @@ module TripletexRubyClient
       # form parameters
       form_params = {}
 
+      # return_type
+      return_type = opts[:'return_type'] || 'String'
+
       # http body (model)
       post_body = nil
       auth_names = ['tokenAuthScheme']
@@ -118,7 +123,7 @@ module TripletexRubyClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'String')
+        :return_type => return_type)
       if @api_client.config.debugging
         @api_client.config.logger.debug "API called: ReminderApi#download_pdf\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
