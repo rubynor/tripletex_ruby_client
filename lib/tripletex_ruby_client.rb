@@ -10,6 +10,8 @@ Swagger Codegen version: 2.4.24
 
 =end
 
+require 'ostruct'
+
 # Common files
 require 'tripletex_ruby_client/api_client'
 require 'tripletex_ruby_client/api_error'
